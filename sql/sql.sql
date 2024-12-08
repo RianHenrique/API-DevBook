@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS devbook;
+USE devbook;
+
 DROP TABLE IF EXISTS usuarios;
 
 CREATE TABLE usuarios (
@@ -5,6 +8,6 @@ CREATE TABLE usuarios (
                           nome VARCHAR(50) NOT NULL,
                           nick VARCHAR(50) NOT NULL UNIQUE,
                           email VARCHAR(50) NOT NULL UNIQUE,
-                          senha VARCHAR(50) NOT NULL,
-                          criadaEm TIMESTAMP DEFAULT now()
+                          senha VARCHAR(100) NOT NULL,
+                          criadoEm TIMESTAMP DEFAULT now()
 );

@@ -14,6 +14,8 @@ var (
 
 	//Porta onde API vai rodar
 	Porta = 0
+
+	SecretKey []byte
 )
 
 // Vai inicializar as variaveis de ambiente
@@ -29,10 +31,13 @@ func Carregar() {
 		Porta = 9000
 	}
 
-	StringConexaoBanco = fmt.Sprintf("host=localhost port=5433 user=%s password=%s dbname=%s sslmode=disable",
+	StringConexaoBanco = fmt.Sprintf("host=localhost port=%s user=%s password=%s dbname=%s sslmode=disable",
+		os.Getenv("DB_PORT"),
 		os.Getenv("DB_USUARIO"),
 		os.Getenv("DB_SENHA"),
 		os.Getenv("DB_NOME"),
 	)
+
+	SecretKey = []byte(os.Getenv("SECRET_KEY"))
 
 }

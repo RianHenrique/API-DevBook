@@ -10,7 +10,6 @@ import (
 
 func main() {
 	config.Carregar()
-
 	r := router.Gerar()
 
 	fmt.Printf("Escutando na porta %d\n", config.Porta)
